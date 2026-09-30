@@ -16,7 +16,7 @@ class TextBox:
         elif event.type == pygame.KEYDOWN and self.active:
             if event.key == pygame.K_BACKSPACE:
                 self.text = self.text[:-1]
-            elif event.unicode.isdigit() and len(self.text) < 4:
+            elif event.unicode.isascii() and event.unicode.isdigit() and len(self.text) < 4:
                 self.text += event.unicode
 
     def clear(self):
